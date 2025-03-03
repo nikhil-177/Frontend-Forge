@@ -1,6 +1,123 @@
-/* Header.module.css */
+
+
+
 .header {
     background-color: #f8f9fa;
     padding: 10px;
     text-align: center;
+    background-color: antiquewhite;
+
+}
+
+.mainContainer{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    margin-top: 0.3rem;
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    background-color: transparent;
+    border: none;
+}
+
+.h1{
+    font-size: 2.4rem;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ulBlock{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60vw;
+    background-color: black;
+    height: 100vh;
+    color: white;
+    text-align: start;
+}
+
+.closeSideBar{
+    font-size: 3rem;
+    margin: 2rem;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.ul{
+    margin-top: 4rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.li{
+    list-style-type: none;
+}
+
+.navlink{
+    color: white;
+    font-size: 2.4rem;
+    text-decoration: none;
+}
+
+
+.img{
+    width: 3rem;
+    background-color: transparent;
+    mix-blend-mode: darken;
+}
+
+.ulNone{
+    display: none;
+}
+
+.bigScreen{
+    display: none;
+}
+
+
+
+.active{
+    text-decoration: underline;
+}
+
+@media (min-width : 670px) {
+    .container{
+        display: none;
+    }
+    .bigScreen{
+        display: flex;
+    }
+    .bigScreenul{
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+        padding-right: 1rem;
+        font-size: 2rem;
+    }
+    .bigScreenli{
+        list-style-type: none;
+    }
+    .bigScreenNavlink{
+        color: black;
+        text-decoration: none;
+    }
+    .bigScreenimg{
+        width: 3rem;
+        mix-blend-mode: darken;
+    }
 }
