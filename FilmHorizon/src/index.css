@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html ,body{
+    font-size: 62.5%;
+    background-color: #f6f6f6;
+}
+
+.container{
+    margin: 0 auto;
+    padding: 0.5rem ;
+}
+
+.ham-p{
+    padding: 1rem 0.5rem;
+}
+
+.li-p{
+    padding: 1.25rem;
+}
+
+.h1-m{
+    margin-top: 1rem;
+}
+
+.searchbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 2px solid black;
+    margin-bottom: 1rem;
+}
+.moviesInput{
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    font-size: 1.7rem;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.SearchBtn{
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #fb2c36;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+}
+
+.SearchBtn:hover{
+    background-color: #e7000b;
+}
+
+@media (width >= 640px) {
+    .container{
+        max-width: 200rem;
+        padding: 1.5rem;
+    }
+    .ham-p{
+        padding: 1.5rem 1rem;
+    }
+}
+
