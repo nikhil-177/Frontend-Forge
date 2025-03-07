@@ -37,7 +37,7 @@ export const Header = () => {
             isOpen ? "flex" : "hidden"
           } absolute right-8 top-15  text-3xl rounded-2xl  shadow-xl md:top-25 lg:flex  lg:top-0 lg:right-30 lg:shadow-none lg:rounded-nonw`}
         >
-          <ul className="w-[100px] flex flex-col gap-3 ham-p md:w-[130px] md:text-4xl lg:relative lg:flex-row lg:gap-10  lg:w-[40rem]">
+          <ul className="w-[100px] flex flex-col gap-3 bg-white rounded-3xl ham-p md:w-[130px] md:text-4xl lg:relative lg:flex-row lg:gap-10  lg:w-[40rem]">
             <li className="border-b-[1px]  lg:border-none lg:text-4xl lg:hover:scale-none  hover:scale-[1.1] ">
               {" "}
               <NavLink to={"/"}>Home</NavLink>
