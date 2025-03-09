@@ -1,8 +1,6 @@
 export const FetchTrending = async () => {
+    const APIurl = `https://api.themoviedb.org/3/trending/all/day?api_key=${import.meta.env.VITE_API_KEY}`; // No change needed here
 
-    const APIkey = process.env.API_KEY;
-
-    const APIurl = `https://api.themoviedb.org/3/trending/all/day?api_key=${APIkey}`; // No change needed here
 
 
   

@@ -1,12 +1,6 @@
 export const FetchPopular = async () => {
+    const APIurl = `https://api.themoviedb.org/3/tv/popular?api_key=${import.meta.env.VITE_API_KEY}`; // No change needed here
 
-    const APIkey = process.env.API_KEY;
-
-    const APIurl = `https://api.themoviedb.org/3/tv/popular?api_key=${APIkey}`; // No change needed here
-
-
-  
-    
     try {
       const res = await fetch(APIurl);
       const data = await res.json();

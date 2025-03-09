@@ -1,24 +1,37 @@
-export const fetchMovieDetails = async ({params}) => {
+export const FetchDetails = async ({ params }) => {
+  console.log(params);
 
-    console.log(params);
-    
-    // let id =params.movieId
-    // console.log(id);
-    
-    const APIkey = process.env.API_KEY;
+  let APIurl = ``;
 
-    const APIurl = `https://api.themoviedb.org/3/movie/${params.movieID}?api_key=${APIkey}&append_to_response=credits,images,videos,recommendations,similar,reviews`; // No change needed here
+  // const APIurl = `https://api.themoviedb.org/3/movie/${params.dataID}?api_key=${import.meta.env.VITE_API_KEY}&append_to_response=credits,images,videos,recommendations,similar,reviews`; // No change needed here
 
+  if (params.mediaType === "tv") {
+    APIurl = `https://api.themoviedb.org/3/tv/${params.dataID}?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&append_to_response=credits,images,videos,recommendations,similar,reviews`;
+  } else if (params.mediaType === "movie") {
+    APIurl = `https://api.themoviedb.org/3/movie/${params.dataID}?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&append_to_response=credits,images,videos,recommendations,similar,reviews;`;
+  } else if (params.tvshowID) {
+    APIurl = `https://api.themoviedb.org/3/tv/${params.tvshowID}?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&append_to_response=credits,images,videos,recommendations,similar,reviews`;
+  } else if (!params.mediaType) {
+    APIurl = `https://api.themoviedb.org/3/movie/${params.dataID}?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&append_to_response=credits,images,videos,recommendations,similar,reviews;`;
+  }
 
+  try {
+    const res = await fetch(APIurl);
+    const data = await res.json();
+    console.log(data);
+    console.log(params.tvshowID);
 
-    try {
-      const res = await fetch(APIurl);
-      const data = await res.json();
-      // console.log(data);
-        
-      return data;
-    } catch (error) {
-      console.log("Error fetching data:", error);
-      return { results: [] };
-    }
-  };
+    return data;
+  } catch (error) {
+    console.log("Error fetching data:", error);
+    return { results: [] };
+  }
+};

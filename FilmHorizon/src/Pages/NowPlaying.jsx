@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { DataCards } from "../components/UI/MoviesCards";
+import { DataCards } from "../components/UI/Cards";
 
 export const NowPlaying = () => {
   const PopularData = useLoaderData(); // State to store movie data

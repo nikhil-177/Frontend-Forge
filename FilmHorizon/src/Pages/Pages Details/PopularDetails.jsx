@@ -1,6 +1,14 @@
+import { useLoaderData } from "react-router-dom";
+import { Details } from "../../components/UI/Details";
 
+export const PopularDetails = ({params}) => {
+    console.log(params);
 
-export const PopularDetails = () => {
-    return <h1 className="text-2xl font-bold">pou det</h1>
+    const data = useLoaderData() || {};
+    console.log(data);
+    
+  
+    // console.log(data);
+    return <Details data={data}/>
 
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchSearch } from "../API/FetchSearch"; 
-import { DataCards } from "../components/UI/MoviesCards";
+import { DataCards } from "../components/UI/Cards";
 
 export const Search = () => {
   const [inputValue, setInputValue] = useState("");

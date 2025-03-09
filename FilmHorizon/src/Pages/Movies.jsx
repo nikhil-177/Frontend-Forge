@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { fetchMovies } from "../API/FetchAPI"; // Ensure to import fetchMovies
-import { DataCards } from "../components/UI/MoviesCards";
+import { DataCards } from "../components/UI/Cards";
 
 export const Movies = () => {
   const [inputValue, setInputValue] = useState("");
   const [submittedValue, setSubmittedValue] = useState("titanic");
   const [movies, setMovies] = useState([]); // State to store movie data
+  // console.log(movies);
+  
 
   useEffect(() => {
     async function fetchDefaultMovies() {

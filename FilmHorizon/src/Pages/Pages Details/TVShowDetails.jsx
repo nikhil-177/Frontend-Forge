@@ -1,6 +1,14 @@
+import { useLoaderData } from "react-router-dom";
+import { Details } from "../../components/UI/Details";
 
+export const TVShowDetails = ({params}) => {
+    console.log(params);
 
-export const TVShowDetails = () => {
-    return <h1 className="text-2xl font-bold">TvShowDetails</h1>
+    const data = useLoaderData() || {};
+    console.log(data);
+    
+  
+    // console.log(data);
+    return <Details data={data}/>
 
 }

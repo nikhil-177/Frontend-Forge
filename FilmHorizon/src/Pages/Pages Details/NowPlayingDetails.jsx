@@ -1,3 +1,14 @@
-export const NowPlayingDetails = () => {
-    return <h1>Now Playing Details Page</h1>;
+import { useLoaderData } from "react-router-dom";
+import { Details } from "../../components/UI/Details";
+
+export const NowPlayingDetails = ({params}) => {
+    console.log(params);
+
+    const data = useLoaderData() || {};
+    console.log(data);
+    
+  
+    // console.log(data);
+    return <Details data={data}/>
+
 }

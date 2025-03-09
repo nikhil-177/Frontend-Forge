@@ -1,8 +1,6 @@
 export const fetchMovies = async (name ) => {
+    let APIurl = `https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_API_KEY}&query=${name}`; // No change needed here
 
-    const APIkey = process.env.API_KEY;
-
-    let APIurl = `https://api.themoviedb.org/3/search/movie?api_key=${APIkey}&query=${name}`; // No change needed here
 
 
   

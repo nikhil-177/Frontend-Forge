@@ -6,7 +6,6 @@ import { Movies } from "../Pages/Movies";
 import { MovieDetails } from "../Pages/Pages Details/MovieDetails";
 import { TVShowDetails } from "../Pages/Pages Details/TVShowDetails";
 import { TVShows } from "../Pages/TVShows";
-import { Favourites } from "../Pages/Favourites";
 import { Popular } from "../Pages/Popular";
 import { NowPlaying } from "../Pages/NowPlaying";
 import { Trending } from "../Pages/Trending";
@@ -20,7 +19,7 @@ import { NowPlayingDetails } from "../Pages/Pages Details/NowPlayingDetails";
 import { TrendingDetails } from "../Pages/Pages Details/TrendingDetails";
 import { fetchSearch } from "../API/FetchSearch";
 import { fetchTvShows } from "../API/FetchTvShows";
-import { fetchMovieDetails } from "../API/details/GetMovieDetails";
+import { FetchDetails } from "../API/details/GetMovieDetails";
 
 
 
@@ -41,8 +40,9 @@ export const AppRoutes = () => {
                     loader: fetchSearch,
                 },
                 {
-                    path:"/search/:searchID",
+                    path:"/search/:mediaType/:dataID",
                     element: <SearchDetails /> ,
+                    loader: FetchDetails,
                 },
                 {
                     path:"/movies",
@@ -50,9 +50,9 @@ export const AppRoutes = () => {
                     loader: fetchMovies,
                 },
                 {
-                    path:"/movies/:movieID",
+                    path:"/movies/:dataID",
                     element: <MovieDetails /> ,
-                    loader: fetchMovieDetails,
+                    loader: FetchDetails,
                 },
                 {
                     path:"/tvshows",
@@ -60,12 +60,9 @@ export const AppRoutes = () => {
                     loader: fetchTvShows,
                 },
                 {
-                    path:"/tvshows/:tvshowsID",
+                    path:"/tvshows/:tvshowID",
                     element: <TVShowDetails /> ,
-                },
-                {
-                    path:"/favourites",
-                    element: <Favourites /> ,
+                    loader: FetchDetails,
                 },
                 {
                     path:"/popular",
@@ -73,8 +70,9 @@ export const AppRoutes = () => {
                     loader: FetchPopular,
                 },
                 {
-                    path:"/popular/:popularID",
+                    path:"/popular/:tvshowID",
                     element: <PopularDetails /> ,
+                    loader: FetchDetails,
                 },
                 {
                     path:"/nowplaying",
@@ -82,8 +80,9 @@ export const AppRoutes = () => {
                     loader: FetchNowPlaying,
                 },
                 {
-                    path:"/nowplaying/:nowplayingID",
+                    path:"/nowplaying/:dataID",
                     element: <NowPlayingDetails /> ,
+                    loader: FetchDetails,
                 },
                 {
                     path:"/trending",
@@ -91,8 +90,9 @@ export const AppRoutes = () => {
                     loader: FetchTrending, 
                 },
                 {
-                    path:"/trending/:trendingID",
+                    path:"/trending/:mediaType/:dataID",
                     element: <TrendingDetails /> ,
+                    loader: FetchDetails,
                 },
             ]
         },

@@ -1,4 +1,4 @@
-import { DataCards } from "../components/UI/MoviesCards";
+import { DataCards } from "../components/UI/Cards";
 import { useLoaderData } from "react-router-dom";
 
 export const Popular = () => {

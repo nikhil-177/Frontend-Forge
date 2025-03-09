@@ -59,6 +59,43 @@ html ,body{
     background-color: #e7000b;
 }
 
+.welcome-section{
+    background-color: red;
+}
+
+.home-p{
+    padding-left: 0.5rem;
+}
+
+.explore-btn{
+    padding: 0.5rem;
+    width: fit-content;
+    margin: 0.8rem;
+    border-radius: 5px;
+}
+
+.custom-shape-divider-bottom-1741535379 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1741535379 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 118px;
+}
+
+.custom-shape-divider-bottom-1741535379 .shape-fill {
+    fill: #F6F6F6;
+}
+
+
 @media (width >= 640px) {
     .container{
         max-width: 200rem;

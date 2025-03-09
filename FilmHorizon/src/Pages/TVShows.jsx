@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchTvShows } from "../API/FetchTvShows"; // Ensure to import fetchTvShows
-import { DataCards } from "../components/UI/MoviesCards";
+import { DataCards } from "../components/UI/Cards";
 
 export const TVShows = () => {
   const [inputValue, setInputValue] = useState("");

@@ -1,8 +1,6 @@
 export const FetchNowPlaying = async () => {
+    const APIurl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${import.meta.env.VITE_API_KEY}`; // No change needed here
 
-    const APIkey = process.env.API_KEY;
-
-    const APIurl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${APIkey}`; // No change needed here
 
 
   

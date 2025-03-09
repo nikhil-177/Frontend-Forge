@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 
 export const DataCards = ({ currData, id }) => {
-  const location = useLocation(); 
+  const location = useLocation();
 
   // Determine the base path dynamically
   let basePath = "/movies"; // Default for movies
@@ -12,18 +12,27 @@ export const DataCards = ({ currData, id }) => {
     basePath = "/trending";
   } else if (location.pathname.includes("popular")) {
     basePath = "/popular";
-  }  else if (location.pathname.includes("nowplaying")) {
+  } else if (location.pathname.includes("nowplaying")) {
     basePath = "/nowplaying";
-  }  else if (location.pathname.includes("search")) {
+  } else if (location.pathname.includes("search")) {
     basePath = "/search";
   }
 
   return (
     <li
+      data-aos="fade-up"
+      data-aos-duration="500"
+      data-aos-delay="100"
       key={id}
       className="rounded-3xl li-p bg-white hover:shadow-2xl hover:scale-[1.01]"
     >
-      <NavLink to={`${basePath}/${currData.id}`}>
+      <NavLink
+        to={
+          currData.media_type
+            ? `${basePath}/${currData.media_type}/${currData.id}`
+            : `${basePath}/${currData.id}`
+        }
+      >
         <figure>
           <img
             src={`https://image.tmdb.org/t/p/w500${currData.poster_path}`}

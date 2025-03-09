@@ -1,6 +1,12 @@
+import { useLoaderData } from "react-router-dom";
+import { Details } from "../../components/UI/Details";
 
+export const SearchDetails = ({params}) => {
+    console.log(params);
 
-export const SearchDetails = () => {
-    return <h1 className="text-2xl font-bold">sea det</h1>
+    const data = useLoaderData() || {};
+  
+    // console.log(data);
+    return <Details data={data}/>
 
 }
