@@ -20,6 +20,7 @@ import { TrendingDetails } from "../Pages/Pages Details/TrendingDetails";
 import { fetchSearch } from "../API/FetchSearch";
 import { fetchTvShows } from "../API/FetchTvShows";
 import { FetchDetails } from "../API/details/GetMovieDetails";
+import ErrorPage from "../Pages/ErrorPage";
 
 
 
@@ -29,6 +30,7 @@ export const AppRoutes = () => {
         {
             path:"/",
             element: <AppLayout/> ,
+            errorElement:<ErrorPage />,
             children: [
                 {
                     path:"/",

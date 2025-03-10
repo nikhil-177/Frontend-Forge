@@ -22,11 +22,11 @@ export const Details = ({data}) => {
   
     return (
       <section className="flex flex-col gap-2 container">
-        <h1 className="text-4xl font-bold self-center ham-p underline md:text-6xl">
+        <h1 className="text-4xl font-bold self-center ham-p underline md:text-6xl" data-aos="fade-right">
           {data.title ||  data.name || data.original_name }
         </h1>
         <div className="flex flex-col md:flex-row md:gap-15">
-          <figure className="self-center md:self-start">
+          <figure className="self-center md:self-start" data-aos="flip-down">
             <img
               className="rounded-2xl min-w-[200px] self-center hover:scale-[1.05]"
               src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
@@ -36,7 +36,7 @@ export const Details = ({data}) => {
             />
           </figure>
   
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3" data-aos="fade-left">
             <h3 className="text-xl font-normal md:text-3xl md:ham-p">
               Description: {data.overview || "No Description Available"}
             </h3>
@@ -63,6 +63,8 @@ export const Details = ({data}) => {
           </div>
         </div>
   
+  <div data-aos="fade-right">
+  
         <h1 className="text-xl font-bold md:text-3xl">Crew:</h1>
         <h3 className="text-lg font-medium md:text-2xl">
           Director: {getCrewMembers(CrewMember, "Director")}
@@ -82,13 +84,14 @@ export const Details = ({data}) => {
         <h3 className="text-lg font-medium md:text-2xl">
           Editor: {getCrewMembers(CrewMember, "Editor")}
         </h3>
+  </div>
   
         <h1 className="text-xl font-bold md:text-3xl">Cast:</h1>
         {CastMembers.length > 0 ? (
           <ul className="grid grid-cols-3 gap-4 md:grid-cols-5 lg:grid-cols-7">
             {CastMembers.slice(0, 7).map((currMember, index) => (
-              <li key={index} className="bg-white ham-p h-fit hover:scale-3d hover:shadow-2xl">
-                <h3 className="text-lg font-medium md:text-2xl">
+              <li key={index} className="bg-white ham-p h-fit hover:scale-3d hover:shadow-2xl" data-aos="flip-right">
+                <h3 className="text-lg font-medium md:text-2xl" >
                   {currMember.name} as {currMember.character || "N/A"}
                 </h3>
                 {currMember.profile_path ? (

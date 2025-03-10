@@ -26,7 +26,7 @@ export const Movies = () => {
 
   return (
     <>
-      <div className="searchbox">
+      <div className="searchbox" data-aos="fade-up">
         <input
           type="text"
           className="moviesInput"

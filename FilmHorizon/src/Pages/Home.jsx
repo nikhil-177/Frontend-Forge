@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { HomeLoader } from "../API/HomeLoader";
 import { useEffect, useState } from "react";
+import { Slider } from "../components/UI/Slider";
 
 export const Home = () => {
   const [loaderData, setLoaderData] = useState({
@@ -17,24 +18,25 @@ export const Home = () => {
     fetchData();
   }, []);
 
+
   return (
     <main>
-      <section className="relative bg-gradient-to-r from-[#a1c4fd] to-[#c2e9fb] welcome-section h-[70vh] flex flex-col items-center gap-3 container">
-        <div className="content self-center order-2 flex flex-col">
-          <h1 className="home-h1 text-4xl font-semibold">
+      <section className="relative bg-gradient-to-r from-[#a1c4fd] to-[#c2e9fb] welcome-section h-[70vh] flex flex-col items-center gap-3 container lg:h-[90vh] lg:flex-row">
+        <div className="content self-center order-2 flex flex-col lg:order-1 " data-aos="fade-right">
+          <h1 className="home-h1 text-4xl font-semibold md:text-6xl">
             Welcome to My Movie Hub 🎬
           </h1>
-          <p className="home-p text-xl font-normal">
+          <p className="home-p text-xl font-normal md:text-3xl">
             Discover the latest movies, trending shows, and explore your
             favorites. Your one-stop destination for all things cinema!
           </p>
-          <button className="explore-btn text-xl text-white bg-blue-600 px-4 py-2 rounded-md">
+          <button className="explore-btn text-xl text-white bg-blue-600 px-4 py-2 rounded-md md:text-3xl">
             <NavLink to={"/movies"}>Explore Now</NavLink>
           </button>
         </div>
-        <figure className="order-1">
+        <figure className="order-1" data-aos="fade-left">
           <img
-            className="scale-x-[-1] w-[30rem]"
+            className="scale-x-[-1] w-[30rem] sm:w-[35rem] md:w-[40rem] lg:w-[80rem]"
             src={"../public/hero.webp"}
             alt=""
           />
@@ -54,25 +56,46 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Trending Movies Slider */}
       <section className="mt-6 container">
-        <h2 className="text-5xl font-bold mb-4 px-4">Trending Movies</h2>
-        <div className="overflow-x-auto scrollbar-hide">
-          <ul className="flex space-x-4 px-4 gap-5 relative">
-            {loaderData.trending.map((currData, index) => (
-              <li key={currData.id} className="flex-shrink-0 w-[15rem] bg-red-500 relative">
-                <img
-                  src={`https://image.tmdb.org/t/p/w300${currData.poster_path}`}
-                  alt=""
-                  className="w-[120px] h-[270px] object-cover  rounded-md"
-                />
-                <div className="text-center text-8xl font-semibold mt-2 absolute z-20 bottom-0 left-2 drop-shadow-[2px_2px_0px_rgba(255,255,255,0.8)] ">
-                  {index + 1}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <section data-aos="fade-left">
+          <h2 className="text-5xl font-bold mb-4 px-4">Trending</h2>
+          <div className="overflow-x-auto hide-scrollbar relative">
+            <ul
+              className={`flex space-x-4 px-4 gap-8 relative ul-p w-[35rem] 
+            `}
+            >
+              {loaderData.trending.map((currData, index) => (
+                <Slider currData={currData} index={index} page={"Trending"}/>
+              ))}
+            </ul>
+          </div>
+        </section>
+        <section data-aos="fade-right">
+          <h2 className="text-5xl font-bold mb-4 px-4">Popular</h2>
+          <div className="overflow-x-auto hide-scrollbar relative">
+            <ul
+              className={`flex space-x-4 px-4 gap-8 relative ul-p w-[35rem] 
+            `}
+            >
+              {loaderData.popular.map((currData, index) => (
+                <Slider currData={currData} index={index} page={"Popular"} />
+              ))}
+            </ul>
+          </div>
+        </section>
+        <section data-aos="fade-left">
+          <h2 className="text-5xl font-bold mb-4 px-4">Now Playing</h2>
+          <div className="overflow-x-auto hide-scrollbar relative">
+            <ul
+              className={`flex space-x-4 px-4 gap-8 relative ul-p w-[35rem]  
+            `}
+            >
+              {loaderData.nowPlaying.map((currData, index) => (
+                <Slider currData={currData} index={index} page ={"NowPlaying"}/>
+              ))}
+            </ul>
+          </div>
+        </section>
       </section>
     </main>
   );

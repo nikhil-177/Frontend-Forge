@@ -5,7 +5,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
+
 
 html ,body{
     font-size: 62.5%;
@@ -59,20 +61,31 @@ html ,body{
     background-color: #e7000b;
 }
 
-.welcome-section{
+.welcome-section {
     background-color: red;
 }
+
+.welcome-section.dark {
+    background-color: #333; /* Dark mode background for welcome section */
+}
+
 
 .home-p{
     padding-left: 0.5rem;
 }
 
-.explore-btn{
+.explore-btn {
     padding: 0.5rem;
     width: fit-content;
     margin: 0.8rem;
     border-radius: 5px;
 }
+
+.explore-btn.dark {
+    background-color: #444; /* Dark mode button background */
+    color: #fff; /* Light text color for button */
+}
+
 
 .custom-shape-divider-bottom-1741535379 {
     position: absolute;
@@ -95,6 +108,18 @@ html ,body{
     fill: #F6F6F6;
 }
 
+.ul-p{
+    padding: 2rem 2.5rem;
+}
+
+.hide-scrollbar::-webkit-scrollbar{
+    display: none;
+}
+
+.active{
+    color: #4CAF50;
+}
+
 
 @media (width >= 640px) {
     .container{
@@ -105,4 +130,3 @@ html ,body{
         padding: 1.5rem 1rem;
     }
 }
-

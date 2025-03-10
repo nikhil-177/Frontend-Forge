@@ -23,9 +23,10 @@ export const Search = () => {
     console.log(search);
   }
 
+
   return (
     <>
-      <div className="searchbox">
+      <div className={`searchbox`} data-aos="fade-up">
         <input
           type="text"
           className="moviesInput"
@@ -37,7 +38,7 @@ export const Search = () => {
           Search
         </button>
       </div>
-      <ul className="grid grid-cols-2 gap-7 container md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+      <ul className={`grid grid-cols-2 gap-7 container md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 $`} >
         {search
           .filter((currSearched) => currSearched.poster_path)
           .map((currSearched) => <DataCards currData={currSearched} id={currSearched.id}/>)}
