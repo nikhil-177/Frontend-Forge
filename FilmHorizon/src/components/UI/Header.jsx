@@ -13,7 +13,7 @@ export const Header = () => {
 
 
   return (
-    <header className={` w-full sticky top-0 z-40  bg-white md:shadow-md `}  data-aos="fade-left">
+    <header className={` w-full sticky top-0 z-40  bg-white md:shadow-md `} >
       <div className="container flex justify-between ">
         <div>
           <h1 className="text-4xl sm:text-5xl ">FILM HORIZON</h1>

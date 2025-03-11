@@ -20,7 +20,7 @@ export const Home = () => {
 
 
   return (
-    <main>
+    <main className="overflow-hidden">
       <section className="relative bg-gradient-to-r from-[#a1c4fd] to-[#c2e9fb] welcome-section h-[70vh] flex flex-col items-center gap-3 container lg:h-[90vh] lg:flex-row">
         <div className="content self-center order-2 flex flex-col lg:order-1 " data-aos="fade-right">
           <h1 className="home-h1 text-4xl font-semibold md:text-6xl">
@@ -37,7 +37,8 @@ export const Home = () => {
         <figure className="order-1" data-aos="fade-left">
           <img
             className="scale-x-[-1] w-[30rem] sm:w-[35rem] md:w-[40rem] lg:w-[80rem]"
-            src={"../public/hero.webp"}
+            src="/images/hero.webp"
+
             alt=""
           />
         </figure>
