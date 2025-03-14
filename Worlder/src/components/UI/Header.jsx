@@ -3,29 +3,29 @@ import { NavLink } from "react-router-dom";
 export const Header = () => {
   return (
     <header>
-      <div>
-        <section>
-          <h1>Wolder</h1>
-        </section>
-        <section>
-          <nav>
-            <ul>
-              <li>
-                <NavLink to={"/"}>Home</NavLink>
+      <section className="navbar container">
+        <div>
+          <h1 className="navbar-logo">Wolder</h1>
+        </div>
+        <div className="nav">
+          <nav >
+            <ul className="main-nav">
+              <li className="nav-li">
+                <NavLink to={"/"} className={`nav-links`}>Home</NavLink>
               </li>
-              <li>
-                <NavLink to={"/country"}>Country</NavLink>
+              <li className="nav-li">
+                <NavLink to={"/country"} className={`nav-links`}>Country</NavLink>
               </li>
-              <li>
-                <NavLink to={"/about"}>About</NavLink>
+              <li className="nav-li">
+                <NavLink to={"/about"} className={`nav-links`}>About</NavLink>
               </li>
-              <li>
-                <NavLink to={"/contact"}>Contact</NavLink>
+              <li className="nav-li">
+                <NavLink to={"/contact"} className={`nav-links`}>Contact</NavLink>
               </li>
             </ul>
           </nav>
-        </section>
-      </div>
+        </div>
+      </section>
     </header>
   );
 };

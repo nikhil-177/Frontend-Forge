@@ -3,7 +3,7 @@ import { Home } from "../Pages/Home";
 import { About } from "../Pages/About";
 import { Country } from "../Pages/Country";
 import { Contact } from "../Pages/Contact";
-import { AppLayout } from "../components/Layout/AppLayout";
+import { AppLayout } from "../Layout/AppLayout";
 import { CountryDetails } from "../Pages/CountryDetails";
 import { getDetailedData } from "../services/GetServices";
 

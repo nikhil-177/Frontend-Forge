@@ -3,49 +3,44 @@ import { NavLink } from "react-router-dom";
 export const Footer = () => {
   return (
     <footer>
-      <section>
-        <h2>Explore Nations</h2>
-        <p>
-          Your gateway to learning about different countries, their cultures,
-          and fascinating facts.
-        </p>
-      </section>
+      <section className="container footer">
+        <div>
+          <h2 className="footer-heading">Explore Nations</h2>
+          <p className="footer-p">
+            Your gateway to learning about different countries, their cultures,
+            and fascinating facts.
+          </p>
+        </div>
 
-      <section>
-        <h3>Quick Links</h3>
-        <ul>
-          <li>
-            <NavLink to={"/"}>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/country"}>Country</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/about"}>About</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/contact"}>Contact</NavLink>
-          </li>
-        </ul>
-      </section>
+        <div>
+          <h3 className="footer-heading">Quick Links</h3>
+          <ul className="footer-links">
+            <li>
+              <NavLink to={"/"}>Home</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/country"}>Country</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/about"}>About</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/contact"}>Contact</NavLink>
+            </li>
+          </ul>
+        </div>
 
-      <section>
-        <h3>Follow Us</h3>
-        <ul className="social-links">
-          <li>
-            <a
-              href="https://www.instagram.com/nikhilpatel7360/"
-              target="_blank"
-            >
-              for instagram
-            </a>
-          </li>
-          <li> for facebook</li>
-        </ul>
-      </section>
+        <div>
+          <h3 className="footer-heading">Follow Us</h3>
+          <ul className="footer-social-links">
+            <li>for instagram</li>
+            <li> for facebook</li>
+          </ul>
+        </div>
 
-      <section>
-        <p>&copy; 2025 Explore Nations. All rights reserved.</p>
+        <div className="footer-copyright">
+          <p>&copy; 2025 Explore Nations. All rights reserved.</p>
+        </div>
       </section>
     </footer>
   );
