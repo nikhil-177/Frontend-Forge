@@ -22,7 +22,7 @@ A modern **React + Vite** web app that provides detailed information about count
 ### 📞 Contact Page
 ![Contact](public/screenshots/contact.png)
 
-*(Replace `screenshots/...png` with actual image URLs or paths inside your repo.)*
+
 
 ---
 
