@@ -1,8 +1,7 @@
 import { startTransition, useEffect, useState, useTransition } from "react";
-import { NavLink } from "react-router-dom";
 import { getCountriesData } from "../services/GetServices";
-import { FaLongArrowAltRight } from "react-icons/fa";
 import { Loader } from "../components/UI/Loader";
+import { CountryCards } from "../components/UI/CountryCards";
 
 export const Country = () => {
   const [countriesData, setCountriesData] = useState([]);
@@ -12,7 +11,7 @@ export const Country = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  const[isPending, startTransition] = useTransition();
+  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     startTransition(() => {
@@ -68,17 +67,12 @@ export const Country = () => {
       <section className="container country-page">
         <div className="searchbox ">
           <input
-            className="searchbar search-rounded"
             type="text"
             placeholder="Search"
             value={inputValue}
             onChange={handleInputValue}
           />
-          <select
-            className="SearchSelector search-rounded"
-            value={selectedContinent}
-            onChange={handleChange}
-          >
+          <select value={selectedContinent} onChange={handleChange}>
             <option value="">--Select Continent--</option>
             {[
               "Africa",
@@ -98,74 +92,41 @@ export const Country = () => {
             Sort {sortOrder === "asc" ? "Descending" : "Ascending"}
           </button>
         </div>
-        {
-          isPending ? (
-            <Loader />
-          ) : (
-            <>
-              <div className="container card-container">
-            <ul className="country-grid">
-              {currentItems.map((currData) => (
-                <li
-                  className="country-card"
-                  key={currData.cca3 || currData.ccn3 || currData.name.official}
-                >
-                  <NavLink
-                    className={`cards-navlink`}
-                    to={`/country/${currData.name.official}`}
-                  >
-                    <figure>
-                      <img
-                        className="card-img"
-                        src={currData.flags.svg}
-                        alt={currData.flags.alt}
-                        width={200}
-                      />
-                    </figure>
-                    <h2 className="card-main-heading">
-                      {currData.name.common || currData.name.official}
-                    </h2>
-                    <div className="card-sub-heading">
-                      <p>Continent: {currData.continents}</p>
-                      <p>Capital : {currData.capital}</p>
-                      <p>Population: {currData.population}</p>
-                    </div>
-  
-                    <button className="card-btn" tabIndex={-1}>
-                      Read More <FaLongArrowAltRight />
-                    </button>
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="country-pagination">
-            <button
-              className="pagination-btn"
-              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-              disabled={currentPage === 1}
-            >
-              Prev
-            </button>
-            <span className="pagination-text">
-              {" "}
-              Page {currentPage} of {totalPages}{" "}
-            </span>
-            <button
-              className="pagination-btn"
-              onClick={() =>
-                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-              }
-              disabled={currentPage === totalPages}
-            >
-              Next
-            </button>
-          </div>
-            </>
-          
-          )
-        }
-       
+        {isPending ? (
+          <Loader />
+        ) : (
+          <>
+            <div className="container card-container">
+              <ul className="country-grid">
+                {currentItems.map((currData) => (
+                  <CountryCards currData={currData} key={currData.id} />
+                ))}
+              </ul>
+            </div>
+            <div className="country-pagination ">
+              <button
+                className="btn"
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+              >
+                Prev
+              </button>
+              <span className="pagination-text">
+                {" "}
+                Page {currentPage} of {totalPages}{" "}
+              </span>
+              <button
+                className="btn"
+                onClick={() =>
+                  setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                }
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
+            </div>
+          </>
+        )}
       </section>
     </>
   );

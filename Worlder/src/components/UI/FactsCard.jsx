@@ -1,6 +1,6 @@
 export const FactCards = ({ currData }) => {
   return (
-    <li>
+    <li className="card home-li">
       <h3>{currData.name}</h3>
       <p>
         <strong>Capital :</strong> {currData.capital}

@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 export const Footer = () => {
   return (
@@ -33,15 +34,29 @@ export const Footer = () => {
         <div>
           <h3 className="footer-heading">Follow Us</h3>
           <ul className="footer-social-links">
-            <li>for instagram</li>
-            <li> for facebook</li>
+            <li>
+              <a
+                href="https://www.instagram.com/nikhilpatel7360/"
+                target="_blank"
+              >
+                <FaInstagram />
+              </a>
+            </li>
+            <li>
+              {" "}
+              <a
+                href="https://www.facebook.com/profile.php?id=100036064223556"
+                target="_blank"
+              >
+                <FaFacebook />
+              </a>
+            </li>
           </ul>
         </div>
-
-        <div className="footer-copyright">
-          <p>&copy; 2025 Explore Nations. All rights reserved.</p>
-        </div>
       </section>
+      <div className="footer-copyright container">
+        <p>&copy; 2025 Explore Nations. All rights reserved.</p>
+      </div>
     </footer>
   );
 };

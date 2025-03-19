@@ -7,11 +7,10 @@ export const CountryDetails = () => {
 
   return (
     <>
-      <section>
-        <div>
-          {/* <!-- Left Column (General Info) --> */}
-          <aside>
-            <h2>Country Information</h2>
+      <section className="country-details container card">
+        <div className="details-grid">
+          <aside className="grid-left">
+            <h3>Country Information</h3>
             <p>
               <strong>Capital: </strong>
               <span>{detailedData.capital}</span>
@@ -34,17 +33,15 @@ export const CountryDetails = () => {
             </p>
           </aside>
 
-          {/* <!-- Middle Column (Flag & Name) --> */}
-          <div>
-            <h1>{detailedData.name.common || detailedData.name.official}</h1>
+          <div className="grid-center">
+            <h2>{detailedData.name.common || detailedData.name.official}</h2>
             <figure>
               <img src={detailedData.flags.svg} alt={detailedData.flags.alt} />
             </figure>
           </div>
 
-          {/* <!-- Right Column (Additional Info) --> */}
-          <aside>
-            <h2>More Details</h2>
+          <aside className="grid-right">
+            <h3>More Details</h3>
             <p>
               <strong>Languages: </strong>
               <span>
